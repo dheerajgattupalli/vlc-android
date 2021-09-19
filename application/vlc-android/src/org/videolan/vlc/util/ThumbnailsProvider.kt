@@ -78,6 +78,7 @@ object ThumbnailsProvider {
 
     @WorkerThread
     fun getVideoThumbnail(media: MediaWrapper, width: Int): Bitmap? {
+        //#TODO Add TVDB/TMDB thumbnails here
         val filePath = media.uri.path ?: return null
         if (appDir == null) appDir = AppContextProvider.appContext.getExternalFilesDir(null)
         val hasCache = appDir?.exists() == true
